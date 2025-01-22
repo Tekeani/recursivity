@@ -44,21 +44,24 @@ function afficherDossier() {
 afficherDossier()
 
 let contenu = dossierPrincipal.contenu
-function afficherDossierIteratif(contenu) {
-        for (let i = 0; i < contenu.length; i++) {
-        console.log(contenu[i].nom)
+function afficherDossierIteratif(dossier) {
+        for (const element of dossier.contenu) {
+            console.log(element.nom)
     }
 }
 
-afficherDossierIteratif(dossierPrincipal.contenu)
+afficherDossierIteratif(dossierPrincipal)
 
 
-function afficherDossierRecursif(contenu, i = 0) {
-    if (i >= contenu.length) {
+function afficherDossierRecursif(dossier) {
+    if (dossier.contenu === undefined) {
         return
     }
-    console.log(contenu[i].nom)
-    afficherDossierRecursif(contenu, i + 1)
+    // console.log(dossier.nom)
+    for (const element of dossier.contenu) {
+    console.log(element.nom)
+    afficherDossierRecursif(element)
+    }
 }
 
-afficherDossierRecursif(contenu, 0)
+afficherDossierRecursif(dossierPrincipal)
