@@ -38,7 +38,17 @@ const dossierPrincipal = {
   }
 
 function afficherDossier() {
-    console.log(dossierPrincipal)
+    console.log(dossierPrincipal.nom)
 }
 
 afficherDossier(dossierPrincipal)
+
+
+function afficherDossierIteratif() {
+    let contenu = dossierPrincipal.contenu
+    for (let i = 0; i < contenu.length; i++) {
+        console.log(contenu[i].nom)
+    }
+}
+
+afficherDossierIteratif()
